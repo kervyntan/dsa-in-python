@@ -1,9 +1,9 @@
 class Stack():
 
-    def __init__(self, size, top):
+    def __init__(self, size):
         self.size = size
         self.data = [0]*size
-        self.top = top
+        self.top = -1
     
     def push(self, x):
         if self.top >= self.size - 1:
@@ -28,7 +28,7 @@ class Stack():
         else:
             print(self.data[self.top])
 
-stack = Stack(3, -1)
+stack = Stack(3)
 stack.push(2)
 stack.push(3)
 stack.push(4)
