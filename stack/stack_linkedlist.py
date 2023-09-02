@@ -1,3 +1,5 @@
+# Front of the linkedlist is the top of the stack
+
 class Node:
     def __init__(self, data=None):
         self.data = data
@@ -18,3 +20,34 @@ class Stack:
             self.top = node_to_be_added
         self.size += 1
         print(node_to_be_added.data)
+    
+    def pop(self):
+        if self.size == 0:
+            print("Stack is empty.")
+            return
+        else:
+            self.size = self.size - 1
+            node = self.top
+            self.top = node.next
+            node.next = None
+            print(node.data)
+            return node
+    
+    def peek(self):
+        if self.size == 0:
+            print("Stack is empty.")
+            return
+        else:
+            print(self.top.data)
+            return self.top
+    
+
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+stack.peek()
+# stack.pop()
+# stack.pop()
+# stack.pop()
