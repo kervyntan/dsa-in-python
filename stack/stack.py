@@ -13,8 +13,18 @@ class Stack():
             self.data[self.top] = x
             print(self.data[self.top])
 
+    def pop(self):
+        if self.top == -1:
+            print("Stack underflow")
+        else:
+            popped_data = self.data[self.top]
+            self.data[self.top] = 0
+            self.top = self.top - 1
+            return popped_data
+
 stack = Stack(3, -1)
 stack.push(2)
 stack.push(3)
 stack.push(4)
 print(stack.data[0 : stack.top + 1])
+print(stack.pop())
