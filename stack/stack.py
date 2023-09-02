@@ -21,6 +21,12 @@ class Stack():
             self.data[self.top] = 0
             self.top = self.top - 1
             return popped_data
+        
+    def peek(self):
+        if self.top == -1:
+            print("Stack is empty.")
+        else:
+            print(self.data[self.top])
 
 stack = Stack(3, -1)
 stack.push(2)
