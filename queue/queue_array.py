@@ -7,14 +7,13 @@ class Queue:
     def enqueue(self, data):
         if self.top == -1:
             # indicates queue is empty
-            self.top = self.top + 1
             self.data.append(data)
-            self.size = self.size + 1
         else:
             # queue is not empty
-            self.top = self.top + 1
             self.data.insert(0, data)
-            self.size = self.size + 1
+        
+        self.top = self.top + 1
+        self.size = self.size + 1
     
     def dequeue(self):
         dequeued_data = self.data[0]
